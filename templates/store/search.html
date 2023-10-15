@@ -1,0 +1,70 @@
+{% extends "store/base.html" %}
+{% load static %}
+
+{% block metadescription %}
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+{% endblock metadescription %}
+
+{% block title %}Search: {{query}}{% endblock title %}
+
+{% block nav %}
+      <div class="col-4 pt-1">
+        <a class="btn btn-sm btn-outline-danger" href="{% url "store:store-products" %}">back</a>
+      </div>
+{% endblock nav %}
+
+{% block content %}
+<div class="container">
+  <h3 class="pb-4 mb-4 fst-italic border-bottom">
+    Search Results
+  </h3>
+</div>
+<!-- Search -->
+<div class="container">
+  <form method="get" action="{% url "store:search" %}">
+    <label for="exampleDataList" class="form-label">Find in Store</label>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" name="query" placeholder="Pesticides, Agri Supplies, Live Stock" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <button class="btn btn-outline-danger" type="submit" id="button-addon2">Search</button>
+    </div>
+  </form>
+</div>
+  <main class="container">
+    <h3 class="pb-4 mb-4 fst-italic border-bottom">
+      {{query}}
+    </h3>
+    <div class="row mb-2">
+        {% if results %}
+            {% for st in results %}
+            <div class="col-md-6">
+                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary-emphasis">{{st.category.name}}</strong>
+                    <h3 class="mb-0">{{st.name}}</h3>
+                    <div class="mb-1 text-body-secondary">R {{st.price}}</div>
+                    <p class="card-text mb-auto">{{st.description}}</p>
+                    <a href="{% url "store:order-confirmation" st.pk %}" class="icon-link gap-1 icon-link-hover stretched-link" style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; padding: 12px 40px; margin-top: 20px; background-color: red !important; border-radius: 10px 20px 60px; color: white;">
+                    Order
+                    </a>
+                    
+                </div>
+                
+                <div class="col-auto d-none d-lg-block">
+                    <img width="200" height="250" background="#55595c" color="#eceeef" text="Thumbnail" src={{st.image.url}}>
+                </div>
+                
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">
+            Not Found.
+          </h3> 
+        {% endif %}
+    </div>
+</div>
+</main>
+
+{% endblock content %}

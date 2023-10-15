@@ -1,0 +1,38 @@
+{% extends "website/index.html" %}
+{% load static %}
+
+{% block metadescription %}{% endblock metadescription %}
+
+{% block title %}Careers at BlackOX{% endblock title %}
+
+{% block content %}
+<div clas="contact_section layout_padding">
+  <h1 class="contact_taital" style="color: red;">Job Openings</h1>
+  <div class="container mt-7">
+    {% if posts %}
+    {% for job in posts %}
+    <div class="card text-center">
+      <div class="card-header">
+        Job Position
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{job.title}}</h5>
+        <p class="card-text">{{job.description|slice:50}}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+      <div class="card-footer text-body-secondary">
+        closing date: {{job.closing_date}}
+      </div>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="card">
+      <div class="card-body">
+        No Opening Positions yet. Come Back in a Month.
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock content %}

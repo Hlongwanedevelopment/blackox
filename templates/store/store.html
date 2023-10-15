@@ -1,0 +1,172 @@
+{% extends "store/base.html" %}
+{% load static %}
+
+{% block content %}
+<form method="post" action="{% url "store:store" %}">
+  {% csrf_token %}
+  <main class="container">
+      <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+        {% for p in post %}
+        <div class="col-lg-6 px-0">
+          <h1 class="display-4 fst-italic">{{p.title}}</h1>
+          <p class="lead my-3">{{p.Snippet}}</p>
+          <p class="lead mb-0"><a href="{% url "website:article-detail" p.pk %}" class="icon-link gap-1 icon-link-hover stretched-link" style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem; padding: 12px 40px; margin-top: 20px; background-color: red !important; border-radius: 10px 20px 60px; color: white;">
+            Continue Reading...
+          </a></p>
+        </div>
+        {% endfor %}
+      </div>
+      
+      <div class="row mb-2">
+        {% for item in storeitems %}
+        <div class="col-md-6">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary-emphasis">{{item.category.name}}</strong>
+              <h3 class="mb-0">{{item.name}}</h3>
+              <div class="mb-1 text-body-secondary">R {{item.price}}</div>
+              <p class="card-text mb-auto">{{item.description}}</p>
+              <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-outline-primary rounded-pill" style="background-color: red; border: None; color: white;" >Details</button>
+              <!-- Modal -->
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel">{{item.name}}</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-1 text-body-secondary">R {{item.price}}</div>
+                      <p class="card-text mb-auto">{{item.description}}</p>
+                      ...
+                      <img width="200" height="250" background="#55595c" color="#eceeef" text="Thumbnail" src={{item.image.url}}>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" data-bs-dismiss="modal" class="btn btn-outline-primary rounded-pill" style="background-color: red; border: None; color: white;" >Close</button>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img width="200" height="250" background="#55595c" color="#eceeef" text="Thumbnail" src={{item.image.url}}>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+   
+    <div class="row g-5">
+      <div class="col-md-8">
+        <h3 class="pb-4 mb-4 fst-italic border-bottom">
+          Boran Cattle Stock
+        </h3>
+        {% for item in cattles %}
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary-emphasis">{{item.cattle.breed_type.breed_name}}</strong>
+            <h3 class="mb-0">{{item.cattle.name}}</h3>
+            <div class="mb-1 text-body-secondary">R {{item.price}}</div>
+            <p class="card-text mb-auto">{{item.description}}</p>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="btn btn-outline-primary rounded-pill" style="background-color: red; border: None; color: white;" >Details</button>
+             <!-- Modal -->
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel">{{item.cattle.name}}</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-1 text-body-secondary">R {{item.price}}</div>
+                      <p class="card-text mb-auto">{{item.description}}</p>
+                      ...
+                      <img width="200" height="250" background="#55595c" color="#eceeef" text="Thumbnail" src={{item.image.url}}>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" data-bs-dismiss="modal" class="btn btn-outline-primary rounded-pill" style="background-color: red; border: None; color: white;" >Close</button>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+          <div class="col-auto d-none d-lg-block">
+            <img width="200" height="250" background="#55595c" color="#eceeef" text="Thumbnail" src={{item.image.url}}>
+          </div>
+         
+        </div>
+        {% endfor %}
+       
+  
+      </div>
+
+      <div class="row g-5">
+        <div class="col-md-8">
+          <h3 class="pb-4 mb-4 fst-italic border-bottom">
+            Sheep Stock
+          </h3>
+          {% for item in sheeps %}
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary-emphasis">{{item.sheep.breed_type.breed_name}}</strong>
+              <h3 class="mb-0"><a href="">{{item.sheep.name}}</a></h3>
+              <div class="mb-1 text-body-secondary">R {{item.price}}</div>
+              <p class="card-text mb-auto">{{item.description}}</p>
+              <button type="button" data-bs-toggle="modal"  data-bs-target="#staticBackdrop" class="btn btn-outline-primary rounded-pill" style="background-color: red; border: None; color: white;" >Details</button>
+             
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      
+                      <h1 class="modal-title fs-5" id="staticBackdropLabel">{{item.sheep.name}}</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-1 text-body-secondary">R {{item.price}}</div>
+                      <p class="card-text mb-auto">{{item.description}}</p>
+                      ...
+                      <img width="200" height="250" background="#55595c" color="#eceeef" text="Thumbnail" src={{item.image.url}}>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" data-bs-dismiss="modal" class="btn btn-outline-primary rounded-pill" style="background-color: red; border: None; color: white;" >Close</button>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img width="200" height="250" background="#55595c" color="#eceeef" text="Thumbnail" src={{item.image.url}}>
+            </div>
+           
+          </div>
+          {% endfor %}
+      
+    
+        </div>
+  
+        <div class="col-md-4">
+          <div class="position-sticky" style="top: 2rem;">
+            <div class="p-4 mb-3 bg-body-tertiary rounded">
+              <h4 class="fst-italic">About</h4>
+              <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <nav class="blog-pagination" aria-label="Pagination">
+      <a href="{% url "store:store-products" %}" class="btn btn-outline-primary rounded-pill" style="background-color: transparent; border: None; color: red;" >Go to Order</button>
+    </nav>
+  </main>
+</form>  
+{% endblock content %}

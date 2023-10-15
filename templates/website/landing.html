@@ -1,0 +1,117 @@
+{% extends "website/index.html" %}
+{% load static %}
+
+{% block content %}
+<div class="banner_section layout_padding">
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+       <div class="carousel-inner">
+          <div class="carousel-item active">
+             <div class="container">
+                <h1 class="banner_taital">Black Ox Farm</h1>
+                <p class="banner_text">Boran Cattle and Dorper Sheep</p>
+                <div class="read_bt"><a href="{% url "website:about" %}">Explore Farm</a></div>
+             </div>
+          </div>
+          <div class="carousel-item">
+             <div class="container">
+                <h1 class="banner_taital">Our Head</h1>
+                <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have sufferedThere are ma available, but the majority have suffered</p>
+                <div class="read_bt"><a href="{% url "website:ourbreed" %}">Learn More</a></div>
+             </div>
+          </div>
+          <div class="carousel-item">
+             <div class="container">
+                <h1 class="banner_taital">Contact Us</h1>
+                <p class="banner_text">There are many variations of passages of Lorem Ipsum available, but the majority have sufferedThere are ma available, but the majority have suffered</p>
+                <div class="read_bt"><a href="{% url "website:contact" %}">Contact Us</a></div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>
+ <!-- banner section end -->
+</div>
+<!-- header section end -->
+<!-- services section start -->
+<div class="services_section layout_padding">
+ <div class="container">
+    <h1 class="services_taital">Our Head </h1>
+    <p class="services_text">Some of our Boran Cattles</p>
+    <div class="services_section_2">
+       <div class="row">
+         {% for cattle in cattles %}
+          <div class="col-md-4">
+             <div><img src={{cattle.image.url}} class="{{cattle.name}}"></div>
+             <div class="btn_main"><a href="{% url "website:cattledetail" cattle.pk %}">{{cattle.name}}</a></div>
+          </div>
+         {% endfor %}
+       </div>
+    </div>
+ </div>
+</div>
+<!-- services section end -->
+<!-- about section start -->
+<div class="about_section layout_padding">
+ <div class="container-fluid">
+    <div class="row">
+       <div class="col-md-6">
+          <div class="about_taital_main">
+             <h1 class="about_taital">Breeding Techniques</h1>
+             <p class="about_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All </p>
+             <div class="readmore_bt"><a href="{% url "website:ourbreed" %}">Read More</a></div>
+          </div>
+       </div>
+       <div class="col-md-6 padding_right_0">
+          <div><img src={% static "website/images/banner-farm.png"%} class="about_img"></div>
+       </div>
+    </div>
+ </div>
+</div>
+<!-- about section end -->
+<!-- about section start -->
+<div class="about_section layout_padding">
+   <div class="container-fluid">
+      <div class="row">
+         <div class="col-md-6">
+            <div class="about_taital_main">
+               <h1 class="about_taital">Farming for Stability</h1>
+               <p class="about_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All </p>
+               <div class="readmore_bt"><a href="{% url "website:about" %}">Read More</a></div>
+            </div>
+         </div>
+         <div class="col-md-6 padding_right_0">
+            <div><img src={% static "website/images/banner-farm.png"%} class="about_img"></div>
+         </div>
+      </div>
+   </div>
+  </div>
+  <!-- about section end -->
+<!-- blog section start -->
+<div class="blog_section layout_padding">
+ <div class="container">
+    <h1 class="blog_taital">BlackOX Store</h1>
+    <p class="blog_text">many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which</p>
+    <div class="play_icon_main">
+       <div class="play_icon"><a href={% url "store:store" %}><img src={% static "website/images/VLOGO.png"%}></a></div>
+    </div>
+ </div>
+</div>
+<!-- blog section end -->
+
+<!-- client section start -->
+
+<!-- choose section start -->
+<div class="choose_section layout_padding">
+ <div class="container">
+    <h1 class="choose_taital">A bit About our "Farm"</h1>
+    <p class="choose_text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All </p>
+    <div class="read_bt_1"><a href="#">Read More</a></div>
+    <div class="newsletter_box">
+       <h1 class="let_text">Get to know us more!</h1>
+       <div class="getquote_bt"><a href="{% url "website:contact" %}">Contact Us!</a></div>
+    </div>
+ </div>
+</div>
+<!-- choose section end -->
+
+{% endblock content %}

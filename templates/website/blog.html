@@ -1,0 +1,67 @@
+{% extends "store/base.html" %}
+{% load static %}
+{% block metadescription %}
+
+{% endblock metadescription %}
+
+{% block title %}News Feed{% endblock title %}
+
+{% block nav %}
+<div class="col-4 pt-1">
+    <a class="btn btn-sm btn-outline-danger" href="{% url "website:landing" %}">Back To Site</a>
+</div>
+{% endblock nav %}
+
+{% block sidenav %}
+<div class="col-4 d-flex justify-content-end align-items-center">
+    <a class="btn btn-sm btn-outline-secondary" href="{% url "store:store" %}">Store</a>
+</div>
+{% endblock sidenav %}
+
+{% block content %}
+
+<main class="container">
+   <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+      {% for p in header %}
+     <div class="col-lg-6 px-0">
+       <h1 class="display-4 fst-italic">{{p.title}}</h1>
+       <p class="lead my-3">{{p.Snippet}}</p>
+       <p class="lead mb-0"><a href="{% url "website:article-detail" p.pk %}" class="text-body-emphasis fw-bold" style="border-radius:20px 0 0 40px; background-color: red; color: white; font-size: 50px;">Read</a></p>
+     </div>
+     {% endfor %}
+   </div>
+ 
+   <div class="row mb-2">
+      {% for p in object_list %}
+     <div class="col-md-6">
+       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+         <div class="col p-4 d-flex flex-column position-static">
+           <strong class="d-inline-block mb-2 text-primary-emphasis">{{p.Category}}</strong>
+           <h3 class="mb-0">{{p.title}}</h3>
+           <div class="mb-1 text-body-secondary">{{p.post_date}}</div>
+           <p class="card-text mb-auto">{{p.Snippet}}</p>
+           <a href="{% url "website:article-detail" p.pk %}" class="icon-link gap-1 icon-link-hover stretched-link" style="border-radius:20px 30px 0 40px; background-color: red; color: white; font-size: 20px;">
+             Continue Read...
+             
+           </a>
+         </div>
+         <div class="col-auto d-none d-lg-block">
+           <img width="200" height="250" background="#55595c" color="#eceeef" text="Thumbnail" src="{{p.hearder_image.url}}" alt="{{p.title}}">
+         </div>
+       </div>
+     </div>
+
+     {% endfor %}
+   </div>
+</main> 
+
+{% endblock content %}
+
+{% block footer %}
+<footer class="py-5 text-center text-body-secondary bg-body-tertiary">
+  <p>BlackOX Site is maintained by: <a href="https://www.genincebronx.co.za">G|B Genince Bronx</a>.</p>
+  <p class="mb-0">
+    <a href="{% url "website:blog" %}">Back to top</a>
+  </p>
+</footer>
+{% endblock footer %}
