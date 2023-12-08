@@ -5,7 +5,8 @@ from website.models import (
     Sheep,
     Contact,
     Post,
-    JobPost
+    JobPost,
+    FarmOperation
 )
 # Register your models here.
 
@@ -15,3 +16,4 @@ admin.site.register(Sheep)
 admin.site.register(Contact)
 admin.site.register(JobPost)
 admin.site.register(Post)
+admin.site.register(FarmOperation)

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
 
     # Project Apps
     'website.apps.WebsiteConfig',
-    'store.apps.StoreConfig'
+   
 ]
 
 MIDDLEWARE = [

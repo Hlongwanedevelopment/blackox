@@ -1,0 +1,57 @@
+{% extends "website/index.html" %}
+{% load static %}
+
+{% block title %}Our Farms{% endblock title %}
+
+{% block header %}
+	<!-- full Title -->
+	<div class="full-title" style="background: url({% static "website/images/IMG-20230924-WA0021.jpg" %}) no-repeat center;">
+		<div class="container">
+			<!-- Page Heading/Breadcrumbs -->
+			<h1 class="mt-4 mb-3">Our Farms
+				<small>Our Journey so-far</small>
+			</h1>
+		</div>
+	</div>
+{% endblock header %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+		<div class="breadcrumb-main">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="index.html">Home</a>
+				</li>
+				<li class="breadcrumb-item active">BlackOx Farm Location</li>
+			</ol>
+		</div>
+
+      <div class="row">
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="{% static "website/images/IMG-20230924-WA0016.jpg"%}" alt="" /></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">WITPUNT - Ermelo Mpumalanga</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-6 portfolio-item">
+          <div class="card h-100">
+            <a href="#"><img class="card-img-top" src="{% static "website/images/IMG-20230924-WA0018.jpg"%}" alt="" /></a>
+            <div class="card-body">
+              <h4 class="card-title">
+                <a href="#">Zwelihle - Amersfoort, Mpumalanga</a>
+              </h4>
+              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <!-- /.container -->
+{% endblock content %}

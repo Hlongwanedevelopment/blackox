@@ -1,0 +1,46 @@
+{% extends "website/index.html" %}
+{% load static %}
+
+{% block title %}{{operation.name}}{% endblock title %}
+
+{% block header %}
+	<!-- full Title -->
+	<div class="full-title" style="background: url({{operation.image2.url}}) no-repeat;">
+		<div class="container">
+			<!-- Page Heading/Breadcrumbs -->
+			<h1 class="mt-4 mb-3">Farm Operation
+				<small>Subheading</small>
+			</h1>
+		</div>
+	</div>
+{% endblock header %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+		<div class="breadcrumb-main">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="index.html">Home</a>
+				</li>
+                <li class="breadcrumb-item">
+					<a href="index.html">Farm Operations</a>
+				</li>
+				<li class="breadcrumb-item active">{{operation.name}}</li>
+			</ol>
+		</div>
+
+		<!-- Portfolio Item Row -->
+		<div class="row">
+			<div class="col-md-8">
+				<img class="img-fluid" src="{{operation.image2.url}}" alt="{{operation.name}}" />
+			</div>
+			<div class="col-md-4">
+					<h3 class="my-3">{{operation.name}}</h3>
+					<p>{{operation.details}}</p>
+			</div>
+		</div>
+		<!-- /.row -->
+    </div>
+    <!-- /.container -->
+{% endblock content %}

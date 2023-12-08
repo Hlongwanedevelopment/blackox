@@ -81,3 +81,22 @@ class JobPost(models.Model):
     
     def __str__(self):
         return self.title
+    
+class FarmOperation(models.Model):
+    name = models.CharField(max_length=200, blank=True, null=True)
+    details = models.TextField(blank=True)
+    image1 = models.ImageField(upload_to="operations/", blank=True)
+    image2 = models.ImageField(upload_to="operations/", blank=True)
+
+    def __str__(self):
+        return self.name
+    
+class JobApplicant(models.Model):
+    fullname = models.CharField(max_length=800, blank=True, null=True)
+    phonenumber = models.CharField(max_length=13, blank=True, null=True)
+    email = models.EmailField(blank=True)
+    resume = models.FileField(blank=True, upload_to="resumes/")
+    motivational_letter = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.fullname

@@ -1,0 +1,54 @@
+{% extends "website/index.html" %}
+{% load static %}
+
+{% block title %}{% endblock title %}
+
+{% block header %}
+	<!-- full Title -->
+	<div class="full-title" style="background: url() no-repeat center;">
+		<div class="container">
+			<!-- Page Heading/Breadcrumbs -->
+			<h1 class="mt-4 mb-3">Farm Operations
+				<small>Subheading</small>
+			</h1>
+		</div>
+	</div>
+{% endblock header %}
+
+{% block content %}
+    <!-- Page Content -->
+    <div class="container">
+		<div class="breadcrumb-main">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="{% url "website:landing" %}">Home</a>
+				</li>
+				<li class="breadcrumb-item active">Farm Operations</li>
+			</ol>
+		</div>
+	{% for operation in operations %}
+	<div class="project-inner">
+		<!-- Project One -->
+		<div class="row">
+			<div class="col-md-7">
+				<a href="{% url "website:operationdetail" operation.pk %}">
+					<img class="img-fluid rounded mb-3 mb-md-0" src="{{operation.image2.url}}" alt="{{operation.name}}" />
+				</a>
+			</div>
+			<div class="col-md-5">
+				<h3>{{operation.name}}</h3>
+				<p>{{operation.details}}</p>
+				<a class="btn btn-primary" href="{% url "website:operationdetail" operation.pk %}">View Operation
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
+			</div>
+		</div>
+		<!-- /.row -->
+	</div>
+	{% endfor %}
+    <hr>
+	
+		<hr>
+    </div>
+    <!-- /.container -->
+{% endblock content %}

@@ -1,38 +1,66 @@
 {% extends "website/index.html" %}
 {% load static %}
 
-{% block metadescription %}{% endblock metadescription %}
+{% block title %}Careers at BlackOx Farm{% endblock title %}
 
-{% block title %}Careers at BlackOX{% endblock title %}
+{% block header %}
+	<!-- full Title -->
+	<div class="full-title" style="background: url({% static "website/images/IMG-20230924-WA0018.jpg" %}) no-repeat center;">
+		<div class="container">
+			<!-- Page Heading/Breadcrumbs -->
+			<h1 class="mt-4 mb-3">Career at Blackox Farms
+				<small>Farming for starbility</small>
+			</h1>
+		</div>
+	</div>
+{% endblock header %}
 
 {% block content %}
-<div clas="contact_section layout_padding">
-  <h1 class="contact_taital" style="color: red;">Job Openings</h1>
-  <div class="container mt-7">
-    {% if posts %}
-    {% for job in posts %}
-    <div class="card text-center">
-      <div class="card-header">
-        Job Position
-      </div>
-      <div class="card-body">
-        <h5 class="card-title">{{job.title}}</h5>
-        <p class="card-text">{{job.description|slice:50}}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-      <div class="card-footer text-body-secondary">
-        closing date: {{job.closing_date}}
-      </div>
-    </div>
-    {% endfor %}
-    {% else %}
-    <div class="card">
-      <div class="card-body">
-        No Opening Positions yet. Come Back in a Month.
-      </div>
-    </div>
-    {% endif %}
-  </div>
-</div>
+    <!-- Page Content -->
+    <div class="container">
+		<div class="breadcrumb-main">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="{% url "website:landing" %}">Home</a>
+				</li>
+				<li class="breadcrumb-item active">Career at Blackox Farms</li>
+			</ol>
+		</div>
 
+		<div class="blog-entries">
+			{% if posts %}
+				<!-- jobopening Post -->
+				{% for post in posts %}
+				<div class="card mb-4">
+					<div class="card-body">
+					<div class="row">
+						<div class="col-lg-6">
+						<a href="{% url "website:careerdetail" post.pk %}">
+							<img class="img-fluid rounded" src="{% static "website/images/c3c728cd-d543-428c-881d-f26a2b34a48b.png" %}" alt="" />
+						</a>
+						</div>
+						<div class="col-lg-6">
+						<h2 class="card-title">{{post.title}}</h2>
+						<p class="card-text">{{post.description|slice:40}}</p>
+						<a href="{% url "website:careerdetail" post.pk %}" class="btn btn-primary">Read More &rarr;</a>
+						</div>
+					</div>
+					</div>
+					<div class="card-footer text-muted">
+					Closing Date: {{post.closing_date}}
+					<a href="{% url "website:careerdetail" post.pk %}">No. of Positions: {{post.number_of_open_position}}</a>
+					</div>
+				</div>
+				{% endfor %}
+			{% else %}
+			 <h2>No Open Vacancies yet. Come back in a month, Thank You.</h2>
+			{% endif %}
+		</div>
+
+		
+
+    </div>
+
+  </div>
+  <!-- /.container -->
 {% endblock content %}
