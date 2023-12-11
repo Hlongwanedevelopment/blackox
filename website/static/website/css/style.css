@@ -118,13 +118,22 @@ button.btn-secondary:hover{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  justify-content: center;
+  text-align: center;
+  justify-self: center;
 }
+
 .portfolio-item {
   margin-bottom: 30px;
 }
 .services-bar h1{
 	font-weight: 600;
 	font-size: 24px;
+	text-align: center;
+	color: rgb(219, 14, 14);
+	box-shadow: 3px 5px 15px rgba(236, 4, 4, 0.5);
+	border-radius: 10px 20px 30px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .services-bar .card{
 	box-shadow: 3px 5px 15px rgba(236, 4, 4, 0.5);
@@ -135,9 +144,13 @@ button.btn-secondary:hover{
 	color: #ffffff;
 	font-size: 18px;
 	font-weight: 400;
+	text-align: center;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	border-radius: 20px 40px;
+	box-shadow: 3px 5px 15px rgba(236, 4, 4, 0.5);
 }
 .services-bar .card .card-footer{
-	background-color: #d41c1c;
+	background-color: #ffffff;
 }
 .about-main{
 	padding: 30px 0px;
@@ -145,7 +158,12 @@ button.btn-secondary:hover{
 .about-main h2{
 	font-size: 24px;
 	font-weight: 600;
+	color: #d41c1c;
+	text-align: center;
 	margin-bottom: 20px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	border-radius: 30px 40px 20px;
+	box-shadow: 3px 4px 2px rgb(190, 26, 26);
 }
 .about-main h5{
 	font-size: 18px;
@@ -178,7 +196,13 @@ button.btn-secondary:hover{
 .portfolio-main h2{
 	font-weight: 600;
 	font-size: 24px;
+	color: #d41c1c;
+	text-align: center;
 	margin-bottom: 20px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	border-radius: 30px 40px 20px;
+	box-shadow: 3px 4px 2px rgb(190, 26, 26);
+
 }
 .portfolio-main .card {
 	border: none;
@@ -202,7 +226,6 @@ button.btn-secondary:hover{
 	overflow: hidden;
 	position: relative;
 }
-.card-header
 .overlay{
 	background: rgba(248, 0, 0, 0.5);
 	position: absolute;
@@ -382,6 +405,7 @@ footer p {
 .full-title h1{
 	position: relative;
 	color: #ffffff;
+	box-shadow: 3px 3px 5px rgba(253, 0, 0, 0.616);
 }
 .full-title h1 small{
 	float: right;
@@ -407,7 +431,12 @@ footer p {
 .team-members-box h2{
 	font-weight: 600;
 	font-size: 24px;
+	color: #d41c1c;
+	text-align: center;
 	margin-bottom: 20px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	border-radius: 30px 40px 20px;
+	box-shadow: 3px 4px 2px rgb(190, 26, 26);
 }
 .team-members-box .card{
 	box-shadow: 3px 5px 15px rgba(0,0,0, .15);
@@ -436,7 +465,12 @@ footer p {
 .customers-box h2{
 	font-weight: 600;
 	font-size: 24px;
+	color: #d41c1c;
+	text-align: center;
 	margin-bottom: 20px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	border-radius: 30px 40px 20px;
+	box-shadow: 3px 4px 2px rgb(190, 26, 26);
 }
 
 .project-inner h3{
@@ -459,7 +493,9 @@ footer p {
 	font-size: 20px;
 	font-weight: 500;
 	margin-bottom: 20px;
-	color: #000000;
+	color: #ffffff;
+	background-color: rgba(236, 4, 4, 0.5);
+	border: #b61818;
 }
 
 .related-projects{
@@ -577,7 +613,7 @@ a
 	margin: 0 auto;
 	text-align: center;
 }
-.error-contents{}
+
 .pricing-box{
 	padding: 30px 0px;
 }
@@ -610,12 +646,22 @@ a
 .contact-left h3{
 	font-weight: 600;
 	font-size: 24px;
+	color: #d41c1c;
+	text-align: center;
 	margin-bottom: 20px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	border-radius: 30px 40px 20px;
+	box-shadow: 3px 4px 2px rgb(190, 26, 26);
 }
 .contact-right h3{
 	font-weight: 600;
 	font-size: 24px;
+	color: #d41c1c;
+	text-align: center;
 	margin-bottom: 20px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	border-radius: 30px 40px 20px;
+	box-shadow: 3px 4px 2px rgb(190, 26, 26);
 }
 .contact-right p abbr{
 	font-weight: bold;
@@ -699,15 +745,4 @@ a
 		font-size: 14px;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
+.card-header
