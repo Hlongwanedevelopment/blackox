@@ -21,7 +21,7 @@
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="index.html">Home</a>
+					<a href="{% url "website:landing" %}">Home</a>
 				</li>
                 <li class="breadcrumb-item">
 					<a href="{% url "website:careers" %}">Careers</a>
@@ -42,22 +42,17 @@
         </div>
         <!-- Contact Details Column -->
         <div class="col-lg-4 mb-4 contact-right">
-          <h3>Job Title</h3>
-          <p>
-            3481 Melrose Place
-            <br>Beverly Hills, CA 90210
-            <br>
-          </p>
+          <h3>{{post.title}}</h3>
+          
           <p>
             <abbr title="Phone">Rates</abbr>: R/
           </p>
           <p>
-            <abbr title="Email">Occupation Time</abbr>:
-            <a href="mailto:name@example.com">name@example.com
-            </a>
+            <abbr title="Email">Occupation Time</abbr>:NaN
+            
           </p>
           <p>
-            <abbr title="Hours">Requirements</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
+            <abbr title="Hours">Requirements</abbr>: NaN
           </p>
         </div>
       </div>

@@ -15,7 +15,7 @@ from django.core.mail import send_mail, BadHeaderError
 # Create your views here.
 
 def indcnt(request):
-    post = Post.objects.all()[:4]
+    post = Post.objects.all()
     operations = FarmOperation.objects.all()
     return render(request, "website/index.html", {
         "posts": post,

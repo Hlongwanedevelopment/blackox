@@ -15,12 +15,30 @@
 	<!-- Custom styles for this template -->
 	<link href="{% static "website/css/style.css" %}" rel="stylesheet">
 </head>
-<body>
+<body onload="myFunction();">
+   <div id="loader">
+      <div class="sk-circle">
+         <div class="sk-circle1 sk-child"></div>
+         <div class="sk-circle2 sk-child"></div>
+         <div class="sk-circle3 sk-child"></div>
+         <div class="sk-circle4 sk-child"></div>
+         <div class="sk-circle5 sk-child"></div>
+         <div class="sk-circle6 sk-child"></div>
+         <div class="sk-circle7 sk-child"></div>
+         <div class="sk-circle8 sk-child"></div>
+         <div class="sk-circle9 sk-child"></div>
+         <div class="sk-circle10 sk-child"></div>
+         <div class="sk-circle11 sk-child"></div>
+         <div class="sk-circle12 sk-child"></div>
+      </div>
+   </div>
+
+   <section id="doc" style="display:none;">
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
         <div class="container">
             <a class="navbar-brand" href="{% url "website:landing" %}">
-            <img src="{% static "website/images/c3c728cd-d543-428c-881d-f26a2b34a48b.png"%}" alt="logo" />
+            <img src="{% static "website/images/c3c728cd-d543-428c-881d-f26a2b34a48b.png"%}" alt="Blackoxfarm logo" />
             </a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="fas fa-bars"></span>
@@ -75,22 +93,22 @@
                <!-- Slide One - Set the background image for this slide in the line below -->
                <div class="carousel-item active" style="background-image: url({% static 'website/images/IMG-20230924-WA0017.jpg'%});">
                   <div class="carousel-caption d-none d-md-block">
-                     <h3>Stud Sires</h3>
-                     <p>Our Breeding bulls</p>
+                     <h3 class="anime3">Stud Sires</h3>
+                     <p >Our Breeding bulls</p>
                   </div>
                </div>
                <!-- Slide Two - Set the background image for this slide in the line below -->
                <div class="carousel-item" style="background-image: url({% static 'website/images/IMG-20230924-WA0018.jpg'%});">
                   <div class="carousel-caption d-none d-md-block">
-                     <h3>Boran Cattles</h3>
-                     <p>Our finest quality of Cattles</p>
+                     <h3 class="anime3">Boran Cattles</h3>
+                     <p >Our finest quality of Cattles</p>
                   </div>
                </div>
                <!-- Slide Three - Set the background image for this slide in the line below -->
                <div class="carousel-item" style="background-image: url({% static 'website/images/IMG-20230924-WA0019.jpg'%});">
                   <div class="carousel-caption d-none d-md-block">
-                     <h3>Dorper Sheeps</h3>
-                     <p>Our range of sheep breed</p>
+                     <h3 class="anime3">Dorper Sheeps</h3>
+                     <p >Our range of sheep breed</p>
                   </div>
                </div>
             </div>
@@ -140,10 +158,11 @@
 					<h5 class="headin5_amrc col_white_amrc pt2">Recent posts</h5>
 					<!--headin5_amrc-->
 					<ul class="footer_ul_amrc">
+            
                   {% for post in posts %}
 						<li class="media">
 							<div class="media-left">
-								<img class="img-fluid" src="{{post.header_image.url}}" alt="{{post.title}}" />
+								<img class="img-fluid" src="{{post.hearder_image.url}}" alt="{{post.title}}" />
 							</div>
 							<div class="media-body">
 								<p>{{post.title}}</p>
@@ -151,6 +170,7 @@
 							</div>
 						</li>
 						{% endfor %}
+                 
 					</ul>
 					<!--footer_ul_amrc ends here-->
 				</div>
@@ -173,9 +193,13 @@
             <!--social_footer_ul ends here-->
         </div>
     </footer>
-	  
-<!-- Bootstrap core JavaScript -->
-<script src="{% static "website/vendor/jquery/jquery.min.js"%}"></script>
-<script src="{% static "website/vendor/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
+	</section>  
+
+   <!-- Bootstrap core JavaScript -->
+   <script src="{% static "website/vendor/jquery/jquery.min.js"%}"></script>
+   <script src="{% static "website/vendor/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+   <script src="{% static "website/js/textAnime.js" %}"></script>
+   <script src="{% static "website/js/loader.js" %}"></script>
 </body>
 </html>

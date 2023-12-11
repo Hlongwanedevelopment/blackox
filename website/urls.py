@@ -7,6 +7,7 @@ from website.views import (
 
 app_name = 'website'
 urlpatterns = [
+    path("icd", views.indcnt, name=""),
     path("", views.landing, name='landing'),
     path("Farm-operations/", views.farmoperations, name="farmoperations"),
     path("farmoperation/<int:pk>/", views.farmoperationdetail, name="operationdetail"),

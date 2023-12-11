@@ -8,8 +8,8 @@
 	<div class="full-title" style="background: url({{operation.image2.url}}) no-repeat;">
 		<div class="container">
 			<!-- Page Heading/Breadcrumbs -->
-			<h1 class="mt-4 mb-3">Farm Operation
-				<small>Subheading</small>
+			<h1 class="mt-4 mb-3">{{operation.name}}
+				<small>Straight from our Farm...</small>
 			</h1>
 		</div>
 	</div>
@@ -21,10 +21,10 @@
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="index.html">Home</a>
+					<a href="{% url "website:landing" %}">Home</a>
 				</li>
                 <li class="breadcrumb-item">
-					<a href="index.html">Farm Operations</a>
+					<a href="{% url "website:farmoperations" %}">Farm Operations</a>
 				</li>
 				<li class="breadcrumb-item active">{{operation.name}}</li>
 			</ol>

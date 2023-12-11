@@ -5,11 +5,11 @@
 
 {% block header %}
 <!-- full Title -->
-<div class="full-title" style="background: url({{operation.image2.url}}) no-repeat center;">
+<div class="full-title" style="background: url({%static "website/images/IMG-20230924-WA0021.jpg" %}) no-repeat center;">
 	<div class="container">
 		<!-- Page Heading/Breadcrumbs -->
 		<h1 class="mt-4 mb-3">FAQ
-			<small>Subheading</small>
+			<small>All you need to know</small>
 		</h1>
 	</div>
 </div>
@@ -21,7 +21,7 @@
 		<div class="breadcrumb-main">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="index.html">Home</a>
+					<a href="{% url "website:landing" %}">Home</a>
 				</li>
 				<li class="breadcrumb-item active">FAQ</li>
 			</ol>

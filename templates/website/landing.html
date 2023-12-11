@@ -6,7 +6,7 @@
  <!-- Page Content -->
  <div class="container">
     <div class="services-bar">
-        <h1 class="my-4">Blackox Farms </h1>
+        <h1 class="my-4 ">Blackox Farms </h1>
         <!-- Services Section -->
         <div class="row">
            <div class="col-lg-4 mb-4">
@@ -16,7 +16,7 @@
                     <img class="img-fluid" src="{% static "website/images/IMG-20230924-WA0016.jpg"%}" alt="" />
                  </div>
                  <div class="card-body">
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                    <p class="card-text ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
                  </div>
                  <div class="card-footer">
                     <a href="#" class="btn btn-primary">Learn More</a>
@@ -45,7 +45,7 @@
     <div class="about-main">
         <div class="row">
            <div class="col-lg-6">
-              <h2>Welcome to BlackOx Farm</h2>
+              <h2 class="">Welcome to BlackOx Farm</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               <h5>Our smart approach</h5>
               <ul>
@@ -61,11 +61,12 @@
               <img class="img-fluid rounded" src="images/about-img.jpg" alt="" />
            </div>
         </div>
+        
         <!-- /.row -->
     </div>
     <!-- Portfolio Section -->
     <div class="portfolio-main">
-        <h2>Our Operations</h2>
+        <h2 class="anime3">Our Operations</h2>
         <div class="row">
          {% for operation in operations %}
            <div class="col-lg-4 col-sm-6 portfolio-item">
@@ -91,12 +92,14 @@
     <!-- Get In Touch Now Section -->
     <div class="row mb-4">
         <div class="col-md-8">
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+           <p class="anime3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
         </div>
         <div class="col-md-4">
            <a class="btn btn-lg btn-secondary btn-block" href="{% url "website:farmoperations" %}">Blackox Farm Operations</a>
         </div>
     </div>
+    <hr>
+    
 </div>
 <!-- /.container -->
 
